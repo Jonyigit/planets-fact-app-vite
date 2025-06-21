@@ -1,0 +1,102 @@
+.planet-neptune-section {
+    padding: 126px 40px 56px 39px;
+    .container {
+        max-width: 1110px;
+        margin: 0 auto;
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 87px;
+        }
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+.planetImage {
+    width: 450px;
+    height: 450px;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1024px) {
+        width: 285px;
+        height: 285px;
+    }
+
+    @media (max-width: 768px) {
+        width: 190px;
+        height: 190px;
+    }
+
+    @media (max-width: 480px) {
+        width: 173px;
+        height: 173px;
+    }
+}
+
+.surface {
+    width: 450px;
+    height: 505px;
+    @media (max-width: 1025px) {
+        width: 285px;
+        height: 300px;
+        object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+        width: 190px;
+        height: 220px;
+    }
+
+    @media (max-width: 480px) {
+        width: 173px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .planet-neptune-section {
+        padding: 27px 40px 36px 39px;
+        .container {
+            .wrapper {
+                flex-direction: column;
+                margin-bottom: 27px;
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .planet-neptune-section {
+        .footer {
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 1130px) {
+    .planet-neptune-section {
+        padding: 27px 40px 36px 39px;
+        .container {
+            .wrapper {
+                flex-direction: column;
+                margin-bottom: 27px;
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .planet-neptune-section {
+        .footer {
+            flex-direction: column;
+        }
+    }
+}

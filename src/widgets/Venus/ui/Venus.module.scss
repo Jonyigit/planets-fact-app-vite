@@ -1,0 +1,82 @@
+.planet-venus-section {
+    padding: 126px 40px 56px 39px;
+    .container {
+        max-width: 1110px;
+        margin: 0 auto;
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 87px;
+        }
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+.planetImage {
+    width: 400px;
+    height: 400px;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1024px) {
+        width: 253px;
+        height: 253px;
+    }
+
+    @media (max-width: 768px) {
+        width: 200px;
+        height: 200px;
+    }
+
+    @media (max-width: 480px) {
+        width: 154px;
+        height: 154px;
+    }
+}
+
+.surface {
+    width: 400px;
+    height: 480px;
+    @media (max-width: 1025px) {
+        width: 400px;
+        height: 300px;
+        object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+        width: 200px;
+        height: 280px;
+    }
+
+    @media (max-width: 480px) {
+        width: 154px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .planet-venus-section {
+        padding: 27px 40px 36px 39px;
+        .container {
+            .wrapper {
+                flex-direction: column;
+                margin-bottom: 27px;
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .planet-venus-section {
+        .footer {
+            flex-direction: column;
+        }
+    }
+}

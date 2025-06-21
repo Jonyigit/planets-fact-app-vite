@@ -1,0 +1,86 @@
+.bar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    max-width: 350px;
+    width: 100%;
+    .list {
+        padding: 0px 28px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 28px;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 2.57px;
+        color: #ffffff7a;
+        height: 48px;
+        border: 1px solid var(--dark-grey);
+        cursor: pointer;
+        transition: all 0.5s ease;
+        &:hover {
+            background: var(--dark-grey);
+        }
+        span {
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 2.57px;
+            color: var(--white);
+        }
+        &.mercury-color {
+            background: var(--blue);
+            border: 1px solid transparent;
+        }
+        &.venus-color {
+            background: var(--dark-yellow);
+            border: 1px solid transparent;
+        }
+        &.earth-color {
+            background: var(--violet);
+            border: 1px solid transparent;
+        }
+        &.mars-color {
+            border: 1px solid transparent;
+            background: var(--orange);
+        }
+        &.jupiter-color {
+            border: 1px solid transparent;
+            background: var(--dark-orange);
+        }
+        &.saturn-color {
+            border: 1px solid transparent;
+            background: var(--brown);
+        }
+        &.uranus-color {
+            border: 1px solid transparent;
+            background: var(--aqua);
+        }
+        &.neptune-color {
+            border: 1px solid transparent;
+            background: var(--linear-blue);
+        }
+    }
+}
+
+@media (max-width: 1130px) {
+    .bar {
+        max-width: 281px;
+        .list {
+            width: 100%;
+            padding: 0px 20px;
+            font-size: 13px;
+            gap: 17px;
+            span {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .bar {
+        display: none;
+    }
+}

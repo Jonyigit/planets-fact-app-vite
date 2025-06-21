@@ -1,0 +1,79 @@
+.planet-saturn-section {
+    padding: 126px 40px 56px 39px;
+    .container {
+        max-width: 1110px;
+        margin: 0 auto;
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 87px;
+        }
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+.planetImage {
+    width: 666.09px;
+    height: 666.09px;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1024px) {
+        width: 422px;
+        height: 422px;
+    }
+
+    @media (max-width: 768px) {
+        width: 300px;
+        height: 300px;
+    }
+
+    @media (max-width: 480px) {
+        width: 256px;
+        height: 256px;
+    }
+}
+
+.surface {
+    @media (min-width: 1025px) {
+        width: 700px;
+        height: 700px;
+    }
+
+    @media (max-width: 768px) {
+        width: 320px;
+        height: 320px;
+    }
+
+    @media (max-width: 480px) {
+        width: 256px;
+        height: 256px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .planet-saturn-section {
+        padding: 27px 40px 36px 39px;
+        .container {
+            .wrapper {
+                flex-direction: column;
+                margin-bottom: 27px;
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .planet-saturn-section {
+        .footer {
+            flex-direction: column;
+        }
+    }
+}

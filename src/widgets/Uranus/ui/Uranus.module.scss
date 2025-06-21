@@ -1,0 +1,102 @@
+.planet-uranus-section {
+    padding: 126px 40px 56px 39px;
+    .container {
+        max-width: 1110px;
+        margin: 0 auto;
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 87px;
+        }
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+.planetImage {
+    width: 458px;
+    height: 458px;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1024px) {
+        width: 290px;
+        height: 290px;
+    }
+
+    @media (max-width: 768px) {
+        width: 200px;
+        height: 200px;
+    }
+
+    @media (max-width: 480px) {
+        width: 176px;
+        height: 176px;
+    }
+}
+
+.surface {
+    width: 458px;
+    height: 509px;
+    @media (max-width: 1025px) {
+        width: 290px;
+        height: 330px;
+        object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+        width: 200px;
+        height: 230px;
+    }
+
+    @media (max-width: 480px) {
+        width: 176px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .planet-uranus-section {
+        padding: 27px 40px 36px 39px;
+        .container {
+            .wrapper {
+                flex-direction: column;
+                margin-bottom: 27px;
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .planet-uranus-section {
+        .footer {
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 1130px) {
+    .planet-uranus-section {
+        padding: 27px 40px 36px 39px;
+        .container {
+            .wrapper {
+                flex-direction: column;
+                margin-bottom: 27px;
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .planet-uranus-section {
+        .footer {
+            flex-direction: column;
+        }
+    }
+}

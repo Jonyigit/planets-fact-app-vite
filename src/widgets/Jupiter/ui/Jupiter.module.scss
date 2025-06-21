@@ -1,0 +1,101 @@
+.planet-jupiter-section {
+    padding: 126px 40px 56px 39px;
+    .container {
+        max-width: 1110px;
+        margin: 0 auto;
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 87px;
+        }
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+.planetImage {
+    width: 582px;
+    height: 582px;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1024px) {
+        width: 369px;
+        height: 369px;
+    }
+
+    @media (max-width: 768px) {
+        width: 300px;
+        height: 300px;
+    }
+
+    @media (max-width: 480px) {
+        width: 224px;
+        height: 224px;
+    }
+}
+
+.surface {
+    width: 582px;
+    height: 582px;
+    @media (max-width: 1025px) {
+        width: 369px;
+        height: 369px;
+    }
+
+    @media (max-width: 768px) {
+        width: 300px;
+        height: 300px;
+    }
+
+    @media (max-width: 480px) {
+        width: 224px;
+        height: 224px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .planet-jupiter-section {
+        padding: 27px 40px 36px 39px;
+        .container {
+            .wrapper {
+                flex-direction: column;
+                margin-bottom: 27px;
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .planet-jupiter-section {
+        .footer {
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 1130px) {
+    .planet-jupiter-section {
+        padding: 27px 40px 36px 39px;
+        .container {
+            .wrapper {
+                flex-direction: column;
+                margin-bottom: 27px;
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .planet-jupiter-section {
+        .footer {
+            flex-direction: column;
+        }
+    }
+}

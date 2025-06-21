@@ -1,0 +1,93 @@
+.card {
+    max-width: 350px;
+    width: 100%;
+    .content {
+        width: 100%;
+        margin-bottom: 40px;
+        h1 {
+            font-weight: 400;
+            font-size: 80px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 23px;
+        }
+        .desc {
+            font-weight: 200;
+            font-size: 16px;
+            color: var(--white);
+            line-height: 25px;
+            margin-bottom: 24px;
+        }
+        .source {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 5px;
+            span {
+                color: var(--dark-grey);
+                font-weight: 400;
+                font-size: 16px;
+            }
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+                font-size: 16px;
+                text-decoration: underline;
+                color: var(--grey);
+                gap: 8px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width: 1130px) {
+    .card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        .content {
+            max-width: 339px;
+            h1 {
+                font-size: 48px;
+            }
+            .desc {
+                font-size: 13px;
+                margin-bottom: 32px;
+                line-height: 22px;
+            }
+            .source {
+                span {
+                    font-size: 14px;
+                }
+                a {
+                    font-size: 14px;
+                    gap: 4px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 755px) {
+    .card {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 28px;
+        .content {
+            h1 {
+                text-align: center;
+                font-size: 40px;
+            }
+            .desc {
+                text-align: center;
+            }
+            .source {
+                justify-content: center;
+            }
+        }
+    }
+}
