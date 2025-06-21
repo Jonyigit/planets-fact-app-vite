@@ -1,12 +1,42 @@
-# React + Vite
+# 🌌 Planets Fact
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Planets Fact** is a web application that provides users with complete and visually engaging information about the planets in our solar system.
 
-Currently, two official plugins are available:
+## 🔍 Key Benefits
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   Learn **detailed and structured** facts about each planet.
+-   Designed with **interactive animations** for an engaging experience.
+-   Explore scientific data like planet size, temperature, composition, and more.
 
-## Expanding the ESLint configuration
+## ⚙️ Technologies & Libraries Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is built using the following technologies:
+
+-   [`React`](https://reactjs.org/) — for building the user interface.
+-   [`react-router-dom`](https://reactrouter.com/) — for handling client-side routing.
+-   [`Sass`](https://sass-lang.com/) — for writing maintainable and modular CSS.
+-   [`AOS (Animate On Scroll)`](https://michalsnik.github.io/aos/) — for scroll-based animations.
+-   [`clsx`](https://github.com/lukeed/clsx) — for conditionally joining classNames.
+
+## 👨‍💻 Creator
+
+Created by **jonyigit prog**.  
+Feel free to open an issue or submit a pull request if you have any feedback, suggestions, or improvements!
+
+## 📷 Screenshots
+
+> You can add screenshots of your app here:
+>
+> ```
+> ![Main Page](./screenshots/main.png)
+> ![Planet Info](./screenshots/planet-info.png)
+> ```
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/your-username/planets-fact.git
+cd planets-fact
+npm install
+npm run dev
+```
