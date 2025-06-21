@@ -87,49 +87,49 @@ function Header({ activeList, setActiveList }) {
             </ul>
             <aside className={clsx(styles.aside, menu === true && styles.show)}>
                 <ul className={styles.menu}>
-                    <Link to={"/"}>
+                    <Link to={"/"} onClick={() => setMenu(false)}>
                         <span>
                             <div className={styles.circle1}></div> mercury
                         </span>
                         <img src={arrowIcon} alt="no photo" />
                     </Link>
-                    <Link to={"/venus"}>
+                    <Link to={"/venus"} onClick={() => setMenu(false)}>
                         <span>
                             <div className={styles.circle2}></div> venus
                         </span>
                         <img src={arrowIcon} alt="no photo" />
                     </Link>
-                    <Link to={"/earth"}>
+                    <Link to={"/earth"} onClick={() => setMenu(false)}>
                         <span>
                             <div className={styles.circle3}></div> earth
                         </span>
                         <img src={arrowIcon} alt="no photo" />
                     </Link>
-                    <Link to={"/mars"}>
+                    <Link to={"/mars"} onClick={() => setMenu(false)}>
                         <span>
                             <div className={styles.circle4}></div> mars
                         </span>
                         <img src={arrowIcon} alt="no photo" />
                     </Link>
-                    <Link to={"/jupiter"}>
+                    <Link to={"/jupiter"} onClick={() => setMenu(false)}>
                         <span>
                             <div className={styles.circle5}></div> jupiter
                         </span>
                         <img src={arrowIcon} alt="no photo" />
                     </Link>
-                    <Link to={"/saturn"}>
+                    <Link to={"/saturn"} onClick={() => setMenu(false)}>
                         <span>
                             <div className={styles.circle6}></div> saturn
                         </span>
                         <img src={arrowIcon} alt="no photo" />
                     </Link>
-                    <Link to={"/uranus"}>
+                    <Link to={"/uranus"} onClick={() => setMenu(false)}>
                         <span>
                             <div className={styles.circle7}></div> uranus
                         </span>
                         <img src={arrowIcon} alt="no photo" />
                     </Link>
-                    <Link to={"/neptune"}>
+                    <Link to={"/neptune"} onClick={() => setMenu(false)}>
                         <span>
                             <div className={styles.circle8}></div> neptune
                         </span>
