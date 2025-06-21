@@ -28,8 +28,7 @@ Feel free to open an issue or submit a pull request if you have any feedback, su
 > You can add screenshots of your app here:
 >
 > ```
-> ![Main Page](./screenshots/main.png)
-> ![Planet Info](./screenshots/planet-info.png)
+> ![alt text](image.png)
 > ```
 
 ## 🚀 Getting Started
