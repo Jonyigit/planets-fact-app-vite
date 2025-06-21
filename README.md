@@ -23,8 +23,6 @@ This project is built using the following technologies:
 Created by **jonyigit prog**.  
 Feel free to open an issue or submit a pull request if you have any feedback, suggestions, or improvements!
 
-## 📷 Screenshots
-
 ## 🚀 Getting Started
 
 ```bash
