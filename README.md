@@ -25,12 +25,6 @@ Feel free to open an issue or submit a pull request if you have any feedback, su
 
 ## 📷 Screenshots
 
-> You can add screenshots of your app here:
->
-> ```
-> ![alt text](./src/shared/assets/images/image.png)
-> ```
-
 ## 🚀 Getting Started
 
 ```bash
