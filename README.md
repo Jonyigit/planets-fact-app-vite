@@ -28,7 +28,7 @@ Feel free to open an issue or submit a pull request if you have any feedback, su
 > You can add screenshots of your app here:
 >
 > ```
-> ![alt text](image.png)
+> ![alt text](./src/shared/assets/images/image.png)
 > ```
 
 ## 🚀 Getting Started
