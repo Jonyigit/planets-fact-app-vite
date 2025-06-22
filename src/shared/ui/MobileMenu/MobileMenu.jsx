@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { PLANETS } from "../../lib/enum/routes.enum";
 import arrowIcon from "../../assets/icons/arrow.svg";
 import styles from "./MobileMenu.module.scss";
