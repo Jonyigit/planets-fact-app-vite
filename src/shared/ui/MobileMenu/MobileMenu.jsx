@@ -1,11 +1,21 @@
 import clsx from "clsx";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { PLANETS } from "../../lib/enum/routes.enum";
 import arrowIcon from "../../assets/icons/arrow.svg";
 import styles from "./MobileMenu.module.scss";
 
 function MobileMenu(props) {
     const { setMenuOpen, menuOpen } = props;
+
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.cssText = `overflow: hidden;`;
+        } else {
+            document.body.style.cssText = `overflow: auto;`;
+        }
+    }, [menuOpen]);
+
     return (
         <aside className={clsx(styles.mobileMenu, menuOpen && styles.mobileMenu__open)}>
             <ul className={styles.mobileMenu__list}>
