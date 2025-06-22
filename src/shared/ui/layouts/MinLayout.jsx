@@ -1,6 +1,7 @@
-import Header from "../widgets/Header/index";
+import Header from "../../../widgets/Header/index";
 
-function MinLayout({ children, activeList, setActiveList }) {
+function MinLayout(props) {
+    const { children, activeList, setActiveList } = props;
     return (
         <>
             <Header activeList={activeList} setActiveList={setActiveList} />

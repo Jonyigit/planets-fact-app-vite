@@ -1,142 +1,68 @@
-import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Link, useLocation } from "react-router-dom";
-import arrowIcon from "../../../shared/assets/icons/arrow.svg";
+import { useEffect, useState } from "react";
+import MobileMenu from "../../../shared/ui/MobileMenu/MobileMenu";
+import MobileTab from "../../../shared/ui/MobileTabs/MobileTab";
+import { PLANETS } from "../../../shared/lib/enum/routes.enum";
 import burgerIcon from "../../../shared/assets/icons/burger.svg";
 import styles from "./Header.module.scss";
 
-function Header({ activeList, setActiveList }) {
+function Header(props) {
+    const { activeList, setActiveList } = props;
     const location = useLocation();
     const [activeNav, setActiveNav] = useState("");
-    const [menu, setMenu] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
-    const changeMenu = () => {
-        setMenu((prev) => {
-            return !prev;
-        });
+    const handleMenuToggle = () => {
+        return setMenuOpen((prev) => !prev);
     };
-
-    const changeActiveList = (value) => {
-        setActiveList(value);
+    const handleListChange = (value) => {
+        return setActiveList(value);
     };
-
-    const planets = ["", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"];
+    const handleNavClick = (value) => {
+        return setActiveNav(value);
+    };
 
     useEffect(() => {
-        const path = location.pathname.slice(1);
-        setActiveNav(path || "");
+        const current = location.pathname === "/" ? "mercury" : location.pathname.slice(1);
+        setActiveNav(current);
     }, [location.pathname]);
-
-    const changeActiveNav = (value) => {
-        setActiveNav(value);
-    };
 
     return (
         <>
             <header className={styles.header} data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-                <div className={styles.container}>
-                    <Link to={"/"}>
+                <div className={styles.header__container}>
+                    <Link to={PLANETS[0].path} className={styles.header__logo}>
                         <h1>The planets</h1>
                     </Link>
+
                     <nav className={styles.nav}>
-                        <ul className={styles["navbar__nav"]}>
-                            {planets.map((planet, index) => (
+                        <ul className={styles.nav__list}>
+                            {PLANETS.map(({ name, path }) => (
                                 <li
-                                    key={planet}
+                                    key={name}
                                     className={clsx(
-                                        styles["navbar-list"],
-                                        activeNav === planet && styles[`active${index}`]
+                                        styles.nav__item,
+                                        activeNav === name && styles[`nav__item--active-${name}`]
                                     )}
-                                    onClick={() => changeActiveNav(planet)}
+                                    onClick={() => handleNavClick(name)}
                                 >
-                                    <Link to={`/${planet.length === 0 ? "" : planet}`}>
-                                        <div className={styles.line}></div>
-                                        <span>{planet.length === 0 ? "mercury" : planet}</span>
+                                    <Link to={path}>
+                                        <div className={styles.nav__underline}></div>
+                                        <span>{name}</span>
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </nav>
-                    <div className={styles.burger} onClick={changeMenu}>
-                        <img src={burgerIcon} alt="no photo" />
-                    </div>
+
+                    <button className={styles.burger} onClick={handleMenuToggle}>
+                        <img src={burgerIcon} alt="burger menu" />
+                    </button>
                 </div>
             </header>
-            <ul className={styles["side-tab"]}>
-                <li
-                    className={clsx(activeList === "overview" && styles.active)}
-                    onClick={() => changeActiveList("overview")}
-                >
-                    <span>Overview</span>
-                    <div className={styles.line}></div>
-                </li>
-                <li
-                    className={clsx(activeList === "internal" && styles.active)}
-                    onClick={() => changeActiveList("internal")}
-                >
-                    <span>Structure</span>
-                    <div className={styles.line}></div>
-                </li>
-                <li
-                    className={clsx(activeList === "surface" && styles.active)}
-                    onClick={() => changeActiveList("surface")}
-                >
-                    <span>Surface</span>
-                    <div className={styles.line}></div>
-                </li>
-            </ul>
-            <aside className={clsx(styles.aside, menu === true && styles.show)}>
-                <ul className={styles.menu}>
-                    <Link to={"/"} onClick={() => setMenu(false)}>
-                        <span>
-                            <div className={styles.circle1}></div> mercury
-                        </span>
-                        <img src={arrowIcon} alt="no photo" />
-                    </Link>
-                    <Link to={"/venus"} onClick={() => setMenu(false)}>
-                        <span>
-                            <div className={styles.circle2}></div> venus
-                        </span>
-                        <img src={arrowIcon} alt="no photo" />
-                    </Link>
-                    <Link to={"/earth"} onClick={() => setMenu(false)}>
-                        <span>
-                            <div className={styles.circle3}></div> earth
-                        </span>
-                        <img src={arrowIcon} alt="no photo" />
-                    </Link>
-                    <Link to={"/mars"} onClick={() => setMenu(false)}>
-                        <span>
-                            <div className={styles.circle4}></div> mars
-                        </span>
-                        <img src={arrowIcon} alt="no photo" />
-                    </Link>
-                    <Link to={"/jupiter"} onClick={() => setMenu(false)}>
-                        <span>
-                            <div className={styles.circle5}></div> jupiter
-                        </span>
-                        <img src={arrowIcon} alt="no photo" />
-                    </Link>
-                    <Link to={"/saturn"} onClick={() => setMenu(false)}>
-                        <span>
-                            <div className={styles.circle6}></div> saturn
-                        </span>
-                        <img src={arrowIcon} alt="no photo" />
-                    </Link>
-                    <Link to={"/uranus"} onClick={() => setMenu(false)}>
-                        <span>
-                            <div className={styles.circle7}></div> uranus
-                        </span>
-                        <img src={arrowIcon} alt="no photo" />
-                    </Link>
-                    <Link to={"/neptune"} onClick={() => setMenu(false)}>
-                        <span>
-                            <div className={styles.circle8}></div> neptune
-                        </span>
-                        <img src={arrowIcon} alt="no photo" />
-                    </Link>
-                </ul>
-            </aside>
+            <MobileTab activeList={activeList} handleListChange={handleListChange} />
+            <MobileMenu setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
         </>
     );
 }

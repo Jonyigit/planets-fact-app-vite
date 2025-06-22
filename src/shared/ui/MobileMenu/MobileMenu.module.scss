@@ -1,0 +1,80 @@
+.mobileMenu {
+    max-width: 375px;
+    width: 100%;
+    background: var(--dark-black);
+    min-height: 100vh;
+    position: fixed;
+    z-index: 999;
+    top: 68px;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    display: none;
+
+    &__open {
+        transform: translateX(0%);
+    }
+
+    &__list {
+        height: 100%;
+        padding: 24px 24px 67px;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            padding: 20px 0;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+                font-size: 18px;
+                color: var(--white);
+                font-weight: 500;
+                letter-spacing: 1.36px;
+                text-transform: uppercase;
+            }
+
+            div {
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+            }
+        }
+    }
+}
+
+.planetDot-mercury {
+    background: #def4fc;
+}
+.planetDot-venus {
+    background: #f7cc7f;
+}
+.planetDot-earth {
+    background: #545bfe;
+}
+.planetDot-mars {
+    background: #ff6a45;
+}
+.planetDot-jupiter {
+    background: #ecad7a;
+}
+.planetDot-saturn {
+    background: #fccb6b;
+}
+.planetDot-uranus {
+    background: #65f0d5;
+}
+.planetDot-neptune {
+    background: #497efa;
+}
+
+@media (max-width: 755px) {
+    .mobileMenu {
+        display: block;
+    }
+}
