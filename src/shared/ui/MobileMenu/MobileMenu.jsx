@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { PLANETS } from "../../lib/enum/routes.enum";
 import arrowIcon from "../../assets/icons/arrow.svg";
 import styles from "./MobileMenu.module.scss";
@@ -10,7 +10,13 @@ function MobileMenu(props) {
 
     useEffect(() => {
         if (menuOpen) {
-            document.body.style.cssText = `overflow: hidden;`;
+            document.body.style.cssText = `
+            @media (max-width: 755px){
+                body{
+                    overflow: hidden;
+                }
+            }
+        `;
         } else {
             document.body.style.cssText = `overflow: auto;`;
         }

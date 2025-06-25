@@ -14,8 +14,8 @@ function Home() {
         <Router />
     ) : (
         <div className={styles.loading}>
-            <div class={styles.spinner}>
-                <div class={styles.spinnerin}></div>
+            <div className={styles.spinner}>
+                <div className={styles.spinnerin}></div>
             </div>
         </div>
     );
