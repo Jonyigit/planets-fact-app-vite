@@ -1,9 +1,11 @@
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import planetData from "../shared/lib/mocks/data";
 import Neptune from "../widgets/Neptune/index";
 
 function NeptunePage({ activeList, setActiveList }) {
+    const { tab } = useParams();
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -19,7 +21,7 @@ function NeptunePage({ activeList, setActiveList }) {
 
     if (!data) return;
 
-    return <Neptune data={data[7]} activeList={activeList} setActiveList={setActiveList} />;
+    return <Neptune data={data[7]} activeList={tab} setActiveList={setActiveList} />;
 }
 
 export default NeptunePage;

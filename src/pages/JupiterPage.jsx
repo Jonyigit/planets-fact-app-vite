@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import Jupiter from "../widgets/Jupiter/index";
 import planetData from "../shared/lib/mocks/data";
+import { useParams } from "react-router-dom";
 
 function JupiterPage({ activeList, setActiveList }) {
+    const { tab } = useParams();
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -19,7 +21,7 @@ function JupiterPage({ activeList, setActiveList }) {
 
     if (!data) return;
 
-    return <Jupiter data={data[4]} activeList={activeList} setActiveList={setActiveList} />;
+    return <Jupiter data={data[4]} activeList={tab} setActiveList={setActiveList} />;
 }
 
 export default JupiterPage;

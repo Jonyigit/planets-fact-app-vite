@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import Mercury from "../widgets/Mercury/index";
 import planetData from "../shared/lib/mocks/data";
+import { useParams } from "react-router-dom";
 
 function MercuryPage({ activeList, setActiveList }) {
+    const { tab } = useParams();
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -19,7 +21,7 @@ function MercuryPage({ activeList, setActiveList }) {
 
     if (!data) return;
 
-    return <Mercury data={data[0]} activeList={activeList} setActiveList={setActiveList} />;
+    return <Mercury data={data[0]} activeList={tab} setActiveList={setActiveList} />;
 }
 
 export default MercuryPage;

@@ -1,56 +1,83 @@
-import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import MinLayout from "../../shared/ui/layouts/MinLayout";
 import MercuryPage from "../../pages/MercuryPage";
 import VenusPage from "../../pages/VenusPage";
-import MinLayout from "../../shared/ui/layouts/MinLayout";
 import EarthPage from "../../pages/EarthPage";
 import MarsPage from "../../pages/MarsPage";
 import JupiterPage from "../../pages/JupiterPage";
 import SaturnPage from "../../pages/SaturnPage";
 import UranusPage from "../../pages/UranusPage";
 import NeptunePage from "../../pages/NeptunePage";
-import { ROUTES_PATHS } from "../../shared/lib/enum/routes.enum";
 
 function Router() {
-    const [activeList, setActiveList] = useState("overview");
-
     return (
-        <MinLayout activeList={activeList} setActiveList={setActiveList}>
-            <Routes>
-                <Route
-                    path={ROUTES_PATHS.MERCURY}
-                    element={<MercuryPage activeList={activeList} setActiveList={setActiveList} />}
-                />
-                <Route
-                    path={ROUTES_PATHS.VENUS}
-                    element={<VenusPage activeList={activeList} setActiveList={setActiveList} />}
-                />
-                <Route
-                    path={ROUTES_PATHS.EARTH}
-                    element={<EarthPage activeList={activeList} setActiveList={setActiveList} />}
-                />
-                <Route
-                    path={ROUTES_PATHS.MARS}
-                    element={<MarsPage activeList={activeList} setActiveList={setActiveList} />}
-                />
-                <Route
-                    path={ROUTES_PATHS.JUPITER}
-                    element={<JupiterPage activeList={activeList} setActiveList={setActiveList} />}
-                />
-                <Route
-                    path={ROUTES_PATHS.SATURN}
-                    element={<SaturnPage activeList={activeList} setActiveList={setActiveList} />}
-                />
-                <Route
-                    path={ROUTES_PATHS.URANUS}
-                    element={<UranusPage activeList={activeList} setActiveList={setActiveList} />}
-                />
-                <Route
-                    path={ROUTES_PATHS.NEPTUNE}
-                    element={<NeptunePage activeList={activeList} setActiveList={setActiveList} />}
-                />
-            </Routes>
-        </MinLayout>
+        <Routes>
+            <Route path="/" element={<Navigate to="/earth/overview" replace />} />
+            <Route
+                path="/mercury/:tab"
+                element={
+                    <MinLayout>
+                        <MercuryPage />
+                    </MinLayout>
+                }
+            />
+            <Route
+                path="/venus/:tab"
+                element={
+                    <MinLayout>
+                        <VenusPage />
+                    </MinLayout>
+                }
+            />
+            <Route
+                path="/earth/:tab"
+                element={
+                    <MinLayout>
+                        <EarthPage />
+                    </MinLayout>
+                }
+            />
+            <Route
+                path="/mars/:tab"
+                element={
+                    <MinLayout>
+                        <MarsPage />
+                    </MinLayout>
+                }
+            />
+            <Route
+                path="/jupiter/:tab"
+                element={
+                    <MinLayout>
+                        <JupiterPage />
+                    </MinLayout>
+                }
+            />
+            <Route
+                path="/saturn/:tab"
+                element={
+                    <MinLayout>
+                        <SaturnPage />
+                    </MinLayout>
+                }
+            />
+            <Route
+                path="/uranus/:tab"
+                element={
+                    <MinLayout>
+                        <UranusPage />
+                    </MinLayout>
+                }
+            />
+            <Route
+                path="/neptune/:tab"
+                element={
+                    <MinLayout>
+                        <NeptunePage />
+                    </MinLayout>
+                }
+            />
+        </Routes>
     );
 }
 

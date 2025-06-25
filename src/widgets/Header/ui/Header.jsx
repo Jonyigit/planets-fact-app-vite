@@ -1,32 +1,20 @@
 import clsx from "clsx";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MobileMenu from "../../../shared/ui/MobileMenu/MobileMenu";
 import MobileTab from "../../../shared/ui/MobileTabs/MobileTab";
 import { PLANETS } from "../../../shared/lib/enum/routes.enum";
 import burgerIcon from "../../../shared/assets/icons/burger.svg";
 import styles from "./Header.module.scss";
 
-function Header(props) {
-    const { activeList, setActiveList } = props;
+function Header({ activeList, setActiveList }) {
     const location = useLocation();
-    const [activeNav, setActiveNav] = useState("");
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const handleMenuToggle = () => {
-        return setMenuOpen((prev) => !prev);
-    };
-    const handleListChange = (value) => {
-        return setActiveList(value);
-    };
-    const handleNavClick = (value) => {
-        return setActiveNav(value);
-    };
+    const currentPlanet = location.pathname.split("/")[1];
 
-    useEffect(() => {
-        const current = location.pathname === "/" ? "mercury" : location.pathname.slice(1);
-        setActiveNav(current);
-    }, [location.pathname]);
+    const handleMenuToggle = () => setMenuOpen((prev) => !prev);
+    const handleListChange = (value) => setActiveList(value);
 
     return (
         <>
@@ -43,9 +31,8 @@ function Header(props) {
                                     key={name}
                                     className={clsx(
                                         styles.nav__item,
-                                        activeNav === name && styles[`nav__item--active-${name}`]
+                                        currentPlanet === name && styles[`nav__item--active-${name}`]
                                     )}
-                                    onClick={() => handleNavClick(name)}
                                 >
                                     <Link to={path}>
                                         <div className={styles.nav__underline}></div>
@@ -61,6 +48,7 @@ function Header(props) {
                     </button>
                 </div>
             </header>
+
             <MobileTab activeList={activeList} handleListChange={handleListChange} />
             <MobileMenu setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
         </>

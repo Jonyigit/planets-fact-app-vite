@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import AOS from "aos";
 import planetData from "../shared/lib/mocks/data";
 import Earth from "../widgets/Earth/index";
 
 function EarthPage({ activeList, setActiveList }) {
+    const { tab } = useParams();
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -19,7 +21,7 @@ function EarthPage({ activeList, setActiveList }) {
 
     if (!data) return;
 
-    return <Earth data={data[2]} activeList={activeList} setActiveList={setActiveList} />;
+    return <Earth data={data[2]} activeList={tab} setActiveList={setActiveList} />;
 }
 
 export default EarthPage;

@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import planetData from "../shared/lib/mocks/data";
 import Mars from "../widgets/Mars/index";
+import { useParams } from "react-router-dom";
 
 function MarsPage({ activeList, setActiveList }) {
+    const { tab } = useParams();
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -19,7 +21,7 @@ function MarsPage({ activeList, setActiveList }) {
 
     if (!data) return;
 
-    return <Mars data={data[3]} activeList={activeList} setActiveList={setActiveList} />;
+    return <Mars data={data[3]} activeList={tab} setActiveList={setActiveList} />;
 }
 
 export default MarsPage;

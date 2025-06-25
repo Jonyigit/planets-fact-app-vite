@@ -5,6 +5,9 @@
     list-style: none;
     max-width: 350px;
     width: 100%;
+    a {
+        text-decoration: none;
+    }
     .list {
         padding: 0px 28px;
         display: flex;
